@@ -247,3 +247,334 @@
   background:#7c3aed;
   color:white;
 }
+
+
+
+
+/* ================= SEARCH QUESTION PAGE ================= */
+
+.search-card{
+
+  position:relative;
+
+  width:720px;
+  min-height:420px;
+
+  padding:38px 40px;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,0.72);
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+    0px 20px 60px rgba(0,0,0,0.12),
+    0px 6px 20px rgba(124,58,237,0.15);
+
+  display:flex;
+  flex-direction:column;
+}
+
+/* Page Title */
+
+.search-title{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:8px;
+
+  background:linear-gradient(90deg,#7c3aed,#6366f1);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.search-title::after{
+  content:"";
+  display:block;
+  width:87px;
+  height:3px;
+  margin-top:6px;
+
+  background:linear-gradient(90deg,#7c3aed,#6366f1);
+  border-radius:4px;
+}
+
+.search-subtitle{
+  font-size:15px;
+  color:#6b7280;
+  margin-bottom:24px;
+}
+
+/* Question input */
+
+.question-input{
+
+  width:100%;
+  padding:13px 14px;
+
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+
+  font-size:14px;
+
+  transition:all 0.2s ease;
+
+  margin-bottom:16px;
+}
+
+.question-input:focus{
+  outline:none;
+  border-color:#7c3aed;
+  box-shadow:0 0 0 3px rgba(124,58,237,0.15);
+}
+
+/* Search row */
+
+.search-row{
+  display:flex;
+  gap:12px;
+  margin-bottom:22px;
+}
+
+/* ================= RFP SELECT ================= */
+
+.rfp-select{
+
+  padding:12px 14px;
+
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+
+  font-size:14px;
+
+  min-width:230px;
+
+  background:white;
+
+  transition:all 0.2s ease;
+}
+
+.rfp-select:focus{
+  outline:none;
+  border-color:#7c3aed;
+}
+
+/* ================= SEARCH BUTTON ================= */
+
+.search-button{
+
+  padding:12px 22px;
+
+  border:none;
+  border-radius:10px;
+
+  background:linear-gradient(90deg,#7c3aed,#6366f1);
+
+  color:white;
+
+  font-size:14px;
+  font-weight:500;
+
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  box-shadow:0px 10px 22px rgba(124,58,237,0.35);
+
+  transition:all 0.2s ease;
+}
+
+.search-button:hover{
+  transform:translateY(-1px);
+}
+
+/* ================= ANSWER BOX ================= */
+
+.answer-box{
+
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+
+  padding:20px;
+
+  background:#f9fafb;
+
+  margin-top:8px;
+}
+
+.answer-title{
+  font-size:12px;
+  font-weight:700;
+  color:#64748b;
+  letter-spacing:0.5px;
+  margin-bottom:10px;
+}
+
+.question-label{
+  font-weight:600;
+  margin-bottom:4px;
+}
+
+.question-text{
+  color:#374151;
+  margin-bottom:14px;
+}
+
+.answer-label{
+  font-weight:600;
+  margin-bottom:4px;
+}
+
+.answer-hint{
+  color:#6b7280;
+  font-size:14px;
+}
+
+
+
+
+/* ===== BATCH QUERY PAGE ===== */
+
+.batch-card{
+
+  width:700px;
+  min-height:380px;
+
+  padding:40px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.75);
+
+  backdrop-filter:blur(12px);
+
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+
+}
+
+/* uploaded file text */
+
+.uploaded-file{
+
+  font-size:14px;
+  color:#6366f1;
+  font-weight:500;
+
+}
+
+/* search button reused */
+
+.search-button{
+
+  padding:12px 22px;
+
+  border:none;
+  border-radius:10px;
+
+  background:linear-gradient(90deg,#7c3aed,#6366f1);
+
+  color:white;
+
+  font-size:14px;
+  font-weight:500;
+
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:0px 10px 22px rgba(124,58,237,0.35);
+
+}
+
+
+
+/* success message */
+
+.success-msg{
+
+  font-size:14px;
+  color:#10b981;
+  font-weight:500;
+
+}
+
+
+/* download button */
+
+.download-button{
+
+  padding:12px 22px;
+
+  border:none;
+  border-radius:10px;
+
+  background:linear-gradient(90deg,#10b981,#059669);
+
+  color:white;
+
+  font-size:14px;
+  font-weight:500;
+
+  cursor:pointer;
+
+  box-shadow:0px 10px 22px rgba(16,185,129,0.35);
+
+}
+
+.download-button:hover{
+
+  transform:translateY(-1px);
+
+}
+
+
+
+
+
+
+/* ================= AUTH PAGES ================= */
+
+.auth-card{
+
+  width:420px;
+
+  padding:35px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.75);
+
+  backdrop-filter:blur(12px);
+
+  box-shadow:
+    0px 20px 60px rgba(0,0,0,0.12),
+    0px 6px 20px rgba(124,58,237,0.15);
+
+}
+
+
+/* ================= PASSWORD ICON FIX ================= */
+
+/* Hide browser default password eye icon */
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+}
+
+input::-webkit-textfield-decoration-container {
+  display: none;
+}
