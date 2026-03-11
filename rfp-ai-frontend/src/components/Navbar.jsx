@@ -22,7 +22,7 @@ function Navbar({ openUploadModal }) {
         </Link>
 
         <button
-          className="nav-upload-btn"
+          className="nav-link-btn"
           onClick={openUploadModal}
         >
           <FiUpload />
