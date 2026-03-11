@@ -1,55 +1,153 @@
-import { useState } from "react";
-import { Container, TextField, Button, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import Navbar from "../components/Navbar";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  TextField,
+  Typography,
+  Link,
+  IconButton,
+  InputAdornment
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import "../App.css";
 
-function Signup() {
+const SignUp = () => {
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
+  });
 
-  const signup = () => {
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
-    const user = { email, password };
-
-    localStorage.setItem("user", JSON.stringify(user));
-
-    alert("Signup successful");
-
-    navigate("/login");
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
   };
 
   return (
 
-    <Container maxWidth="sm" sx={{ mt: 5 }}>
+    <div>
 
-      <Typography variant="h5">Signup</Typography>
+      <Navbar />
 
-      <TextField
-        fullWidth
-        label="Email"
-        margin="normal"
-        onChange={(e) => setEmail(e.target.value)}
-      />
+      <div className="hero-parent">
 
-      <TextField
-        fullWidth
-        label="Password"
-        type="password"
-        margin="normal"
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        <div className="hero-glow"></div>
 
-      <Button variant="contained" fullWidth onClick={signup}>
-        Signup
-      </Button>
+        <Card className="auth-card">
 
-    </Container>
+          <CardContent>
+
+            <Typography
+              variant="h4"
+              align="center"
+              fontWeight={700}
+              mb={2}
+              className="auth-title"
+            >
+              Create Account
+            </Typography>
+
+            <Box component="form" onSubmit={handleSubmit}>
+
+              <TextField
+                label="Username"
+                name="username"
+                fullWidth
+                margin="dense"
+                size="small"
+                value={formData.username}
+                onChange={handleChange}
+              />
+
+              <TextField
+                label="Password"
+                name="password"
+                type={showPassword ? "text" : "password"}
+                fullWidth
+                margin="dense"
+                size="small"
+                value={formData.password}
+                onChange={handleChange}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        onClick={() => setShowPassword(!showPassword)}
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  )
+                }}
+              />
+
+              <TextField
+                label="Confirm Password"
+                name="confirmPassword"
+                type="password"
+                fullWidth
+                margin="dense"
+                size="small"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+              />
+
+              <TextField
+                label="E-mail Address"
+                name="email"
+                fullWidth
+                margin="dense"
+                size="small"
+                value={formData.email}
+                onChange={handleChange}
+              />
+
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                sx={{
+                  mt: 3,
+                  py: 1.3,
+                  fontWeight: 600,
+                  background: "linear-gradient(90deg,#7c3aed,#6366f1)"
+                }}
+              >
+                Sign Up
+              </Button>
+
+              <Typography align="center" sx={{ mt: 2 }}>
+                Already have an account?{" "}
+                <Link href="/signin" underline="hover">
+                  Sign In
+                </Link>
+              </Typography>
+
+            </Box>
+
+          </CardContent>
+
+        </Card>
+
+      </div>
+
+    </div>
 
   );
+};
 
-}
-
-export default Signup;
+export default SignUp;

@@ -29,9 +29,9 @@ function Navbar({ openUploadModal }) {
           Upload RFP
         </button>
 
-        <Link to="/login">
+        <Link to="/signin">
           <FiLogIn />
-          Login
+          Sign In
         </Link>
 
         <Link to="/signup" className="signup-btn">

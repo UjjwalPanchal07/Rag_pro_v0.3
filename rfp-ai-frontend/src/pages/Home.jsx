@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import UploadModal from "../components/UploadModal";
 import { FiSearch, FiFileText } from "react-icons/fi";
@@ -7,6 +8,7 @@ import "../App.css";
 function Home() {
 
   const [openModal, setOpenModal] = useState(false);
+  const navigate = useNavigate();
 
   const openUploadModal = () => {
     setOpenModal(true);
@@ -17,6 +19,7 @@ function Home() {
   };
 
   return (
+
     <div>
 
       <Navbar openUploadModal={openUploadModal} />
@@ -32,11 +35,7 @@ function Home() {
             <h1 className="prism-title">
               <span className="gradient-text prism-container">
                 PRISM
-                <img
-                  src="/logo1.png"
-                  alt="prism logo"
-                  className="prism-rotate"
-                />
+                <img src="/logo1.png" alt="logo" className="prism-rotate"/>
               </span>
             </h1>
 
@@ -46,35 +45,35 @@ function Home() {
               <span className="word w3">Your</span>
               <span className="word gradient-text w4">RFP Response</span>
 
-              <br />
+              <br/>
 
               <span className="word w5">Simplify</span>
               <span className="word w6">Your</span>
               <span className="word w7">Work</span>
               <span className="word w8">With</span>
 
-              <br />
+              <br/>
 
               <span className="word w9">PRISM</span>
 
             </h2>
 
             <p className="hero-description">
-              Profinch RFP Response Intelligence & Solution Manager.<br />
-              A user-friendly platform that manages your RFP tasks effortlessly
-              and enhances your overall efficiency.
+              Profinch RFP Response Intelligence & Solution Manager.
             </p>
-          
 
             <div className="hero-buttons">
 
-              <button className="btn-primary">
+              <button
+                className="btn-primary"
+                onClick={() => navigate("/search")}
+              >
                 <FiSearch /> Search Question
               </button>
 
               <button
                 className="btn-outline"
-                onClick={openUploadModal}
+                onClick={() => navigate("/batch")}
               >
                 <FiFileText /> Fill RFP
               </button>
@@ -93,7 +92,9 @@ function Home() {
       />
 
     </div>
+
   );
+
 }
 
 export default Home;
